@@ -1,4 +1,4 @@
-package com.coding.meet.todo_app.adapters
+package ru.miem.todo_app.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,9 +6,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.coding.meet.todo_app.databinding.ViewTaskGridLayoutBinding
-import com.coding.meet.todo_app.databinding.ViewTaskListLayoutBinding
-import com.coding.meet.todo_app.models.Task
+import ru.miem.todo_app.databinding.ViewTaskGridLayoutBinding
+import ru.miem.todo_app.databinding.ViewTaskListLayoutBinding
+import ru.miem.todo_app.model.Task
 import java.text.SimpleDateFormat
 import java.util.Locale
 

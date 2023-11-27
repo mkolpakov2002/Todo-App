@@ -10,11 +10,11 @@ plugins {
 }
 
 android {
-    namespace 'com.coding.meet.todo_app'
+    namespace 'ru.miem.todo_app'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.coding.meet.todo_app"
+        applicationId "ru.miem.todo_app"
         minSdk 21
         targetSdk 33
         versionCode 1

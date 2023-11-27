@@ -1,7 +1,7 @@
-package com.coding.meet.todo_app.dao
+package ru.miem.todo_app.model.dao
 
 import androidx.room.*
-import com.coding.meet.todo_app.models.Task
+import ru.miem.todo_app.model.Task
 import kotlinx.coroutines.flow.Flow
 
 @Dao

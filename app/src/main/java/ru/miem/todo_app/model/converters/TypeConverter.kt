@@ -1,4 +1,4 @@
-package com.coding.meet.todo_app.converters
+package ru.miem.todo_app.model.converters
 
 import androidx.room.TypeConverter
 import java.util.Date

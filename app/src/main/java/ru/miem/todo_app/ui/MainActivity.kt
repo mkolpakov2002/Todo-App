@@ -1,37 +1,33 @@
-package com.coding.meet.todo_app
+package ru.miem.todo_app.ui
 
 import android.app.Dialog
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
-import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.widget.Button
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
-import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import androidx.room.Query
-import com.coding.meet.todo_app.adapters.TaskRVVBListAdapter
-import com.coding.meet.todo_app.databinding.ActivityMainBinding
-import com.coding.meet.todo_app.models.Task
-import com.coding.meet.todo_app.utils.Status
-import com.coding.meet.todo_app.utils.StatusResult
-import com.coding.meet.todo_app.utils.StatusResult.Added
-import com.coding.meet.todo_app.utils.StatusResult.Deleted
-import com.coding.meet.todo_app.utils.StatusResult.Updated
-import com.coding.meet.todo_app.utils.clearEditText
-import com.coding.meet.todo_app.utils.hideKeyBoard
-import com.coding.meet.todo_app.utils.longToastShow
-import com.coding.meet.todo_app.utils.setupDialog
-import com.coding.meet.todo_app.utils.validateEditText
-import com.coding.meet.todo_app.viewmodels.TaskViewModel
+import ru.miem.todo_app.ui.adapters.TaskRVVBListAdapter
+import ru.miem.todo_app.model.Task
+import ru.miem.todo_app.utils.Status
+import ru.miem.todo_app.utils.StatusResult
+import ru.miem.todo_app.utils.StatusResult.Added
+import ru.miem.todo_app.utils.StatusResult.Deleted
+import ru.miem.todo_app.utils.StatusResult.Updated
+import ru.miem.todo_app.utils.clearEditText
+import ru.miem.todo_app.utils.hideKeyBoard
+import ru.miem.todo_app.utils.longToastShow
+import ru.miem.todo_app.utils.setupDialog
+import ru.miem.todo_app.utils.validateEditText
+import ru.miem.todo_app.ui.viewmodels.TaskViewModel
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
@@ -39,8 +35,9 @@ import com.google.android.material.textfield.TextInputLayout
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
+import ru.miem.todo_app.R
+import ru.miem.todo_app.databinding.ActivityMainBinding
 import java.util.Date
 import java.util.UUID
 
@@ -182,7 +179,7 @@ class MainActivity : AppCompatActivity() {
             isListMutableLiveData.postValue(!isListMutableLiveData.value!!)
         }
 
-        val taskRVVBListAdapter = TaskRVVBListAdapter(isListMutableLiveData ) { type, position, task ->
+        val taskRVVBListAdapter = TaskRVVBListAdapter(isListMutableLiveData ) { type, _, task ->
             if (type == "delete") {
                 taskViewModel
                     // Deleted Task
@@ -263,7 +260,7 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-        mainBinding.edSearch.setOnEditorActionListener{ v, actionId, event ->
+        mainBinding.edSearch.setOnEditorActionListener{ v, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_SEARCH){
                 hideKeyBoard(v)
                 return@setOnEditorActionListener true

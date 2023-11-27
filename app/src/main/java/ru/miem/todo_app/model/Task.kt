@@ -1,4 +1,4 @@
-package com.coding.meet.todo_app.models
+package ru.miem.todo_app.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

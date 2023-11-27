@@ -1,16 +1,15 @@
-package com.coding.meet.todo_app.repository
+package ru.miem.todo_app.model.repository
 
 import android.app.Application
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.room.Query
-import com.coding.meet.todo_app.database.TaskDatabase
-import com.coding.meet.todo_app.models.Task
-import com.coding.meet.todo_app.utils.Resource
-import com.coding.meet.todo_app.utils.Resource.Error
-import com.coding.meet.todo_app.utils.Resource.Loading
-import com.coding.meet.todo_app.utils.Resource.Success
-import com.coding.meet.todo_app.utils.StatusResult
+import ru.miem.todo_app.model.database.TaskDatabase
+import ru.miem.todo_app.model.Task
+import ru.miem.todo_app.utils.Resource
+import ru.miem.todo_app.utils.Resource.Error
+import ru.miem.todo_app.utils.Resource.Loading
+import ru.miem.todo_app.utils.Resource.Success
+import ru.miem.todo_app.utils.StatusResult
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
